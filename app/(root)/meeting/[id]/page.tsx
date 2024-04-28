@@ -9,11 +9,11 @@ import { useParams } from 'next/navigation'
 import { useState } from 'react'
 
 const Meeting = ({ params }: { params: { id: string } }) => {
-	const { id } = useParams();
+	const { id } = useParams()
 	const { isLoaded, user } = useUser()
-	const { call, isCallLoading } = useGetCallById(id);
+	const { call, isCallLoading } = useGetCallById(id)
 	const [isSetupComplete, setIsSetupComplete] = useState(false)
-	if (!isLoaded || isCallLoading) return <Loader />;
+	if (!isLoaded || isCallLoading) return <Loader />
 	return (
 		<main className='h-screen w-full'>
 			<StreamCall call={call}>
